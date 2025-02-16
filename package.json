@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.0.6",
+    "@use-funnel/react-router-dom": "^0.0.10",
     "axios": "^1.7.9",
     "clsx": "^2.1.1",
     "react": "^19.0.0",
