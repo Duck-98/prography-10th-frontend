@@ -176,4 +176,9 @@ const handleSubmit = (data: FunnelState["position"]) => {
 예상되는 바로는 @use-funnel에 종속된 라이브러리인 react-router-dom과 충돌이 나서 라우팅이 제대로 되지 않는 것으로 예상이 됩니다.
 
 그래서 임시로 `window.location`을 사용해서 페이지를 이동시켰습니다.
-저 문제는 use-funnel 라이브러리 자체의 문제인지 확인하고자 issue를 남길 예정입니다.
+저 문제는 use-funnel 라이브러리 자체의 문제인지 확인하고자 issue를
+남길 예정입니다.
+
+**동일 이슈 링크**
+
+> https://github.com/toss/use-funnel/issues/105
