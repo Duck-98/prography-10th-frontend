@@ -30,6 +30,10 @@ type FunnelState = {
   position: ConsentStepType & PersonalInfoStepType & PositionStepType;
 };
 
+/**
+ * 지원 페이지
+ */
+
 const ApplyPage = () => {
   const [isPersonalInfoValid, setIsPersonalInfoValid] = useState(false);
   const [loading, setLoading] = useState(false);

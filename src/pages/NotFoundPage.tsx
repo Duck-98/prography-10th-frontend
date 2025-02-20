@@ -1,5 +1,9 @@
 import { Link } from "react-router-dom";
 
+/**
+ * 404 페이지
+ */
+
 const NotFoundPage = () => {
   return (
     <div className="flex flex-col justify-center items-center min-h-screen">

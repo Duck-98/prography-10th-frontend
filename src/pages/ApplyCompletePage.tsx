@@ -2,7 +2,6 @@ import ComponentLayout from "@/layouts/ComponentLayout";
 import PageLayout from "@/layouts/PageLayout";
 import Button from "@/components/common/Button";
 import { useNavigate } from "react-router-dom";
-// import { CheckIcon } from "@heroicons/react/24/solid";
 
 const ApplyCompletePage = () => {
   const navigate = useNavigate();
