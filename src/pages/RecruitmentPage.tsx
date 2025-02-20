@@ -23,17 +23,17 @@ const RecruitmentPage = () => {
         </div>
 
         {/* 메인 타이틀 */}
-        <h1 className="text-center text-lg md:text-xl mb-4 font-bold">
+        <h1 className="mb-4 text-lg font-bold text-center md:text-xl">
           안녕하세요. 새로운 가치를 만들어가는 IT커뮤니티, Prography 입니다.
         </h1>
 
         {/* 서브 타이틀 - 모집 시작 */}
-        <div className="text-center text-blue-600 font-medium mb-6">
+        <div className="mb-6 font-medium text-center text-blue-600">
           드디어 Prography 10기 모집이 시작되었습니다.
         </div>
 
         {/* 모집 파트 */}
-        <div className="text-center mb-8">
+        <div className="mb-8 text-center">
           <p className="mb-2">
             Product Owner / Design / iOS / AOS / Frontend(React) /
             Backend(Spring)
@@ -42,7 +42,7 @@ const RecruitmentPage = () => {
         </div>
 
         {/* 체크리스트 */}
-        <div className="space-y-3 mb-8">
+        <div className="mb-8 space-y-3">
           <div className="flex items-start space-x-2">
             <span className="text-blue-500">✓</span>
             <p>새로운 가치를 만들어내는데 기술이 두근거리신다면,</p>
@@ -58,8 +58,8 @@ const RecruitmentPage = () => {
         </div>
 
         {/* 슬로건 */}
-        <div className="text-center mb-8">
-          <h2 className="text-blue-600 font-bold text-xl md:text-2xl mb-4">
+        <div className="mb-8 text-center">
+          <h2 className="mb-4 text-xl font-bold text-blue-600 md:text-2xl">
             "프로답게, 재미있게"
           </h2>
           <p className="text-gray-800">
@@ -68,7 +68,7 @@ const RecruitmentPage = () => {
         </div>
 
         {/* 안내문구 */}
-        <p className="text-center text-sm text-gray-600 mb-6">
+        <p className="mb-6 text-sm text-center text-gray-600">
           📌 자세한 정보는 아래 페이지에 담아뒀으니, 지원 전 꼭 확인해주세요 ✨
         </p>
 
@@ -76,19 +76,19 @@ const RecruitmentPage = () => {
         <div className="space-y-4">
           <a
             href="#"
-            className="block text-center bg-blue-100 text-blue-600 py-3 rounded-lg hover:bg-blue-200 transition-colors"
+            className="block py-3 text-center text-blue-600 bg-blue-100 rounded-lg transition-colors hover:bg-blue-200"
           >
             🎯 프로그래피 10기 모집 자세히 알아보기
           </a>
           <a
-            href="#"
-            className="block text-center bg-green-100 text-green-600 py-3 rounded-lg hover:bg-green-200 transition-colors"
+            href="https://prography.org"
+            className="block py-3 text-center text-green-600 bg-green-100 rounded-lg transition-colors hover:bg-green-200"
           >
             🌐 공식 홈페이지
           </a>
           <a
-            href="#"
-            className="block text-center bg-gray-100 text-gray-600 py-3 rounded-lg hover:bg-gray-200 transition-colors"
+            href="https://www.instagram.com/prography_official/"
+            className="block py-3 text-center text-gray-600 bg-gray-100 rounded-lg transition-colors hover:bg-gray-200"
           >
             🔗 인스타그램
           </a>
@@ -97,7 +97,7 @@ const RecruitmentPage = () => {
         {/* 지원하기 버튼 */}
         <Button
           onClick={() => navigate("/apply")}
-          className="w-full mt-8"
+          className="mt-8 w-full"
           variant="primary"
         >
           지원하기
