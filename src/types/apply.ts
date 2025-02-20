@@ -1,13 +1,15 @@
-export type ConsentStepType = {
-  consent?: boolean;
+type ConsentStepType = {
+  consent?: string;
 };
 
-export type PersonalInfoStepType = {
+type PersonalInfoStepType = {
   name?: string;
   email?: string;
   phone?: string;
 };
 
-export type PositionStepType = {
-  position: string;
+type PositionStepType = {
+  position?: string;
 };
+
+export type { ConsentStepType, PersonalInfoStepType, PositionStepType };

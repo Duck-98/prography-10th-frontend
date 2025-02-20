@@ -9,20 +9,11 @@ import { PositionStep } from "@/components/Steps/PositionStep";
 import { useState } from "react";
 
 import { FullPageLoading } from "@/components/Loading";
-
-type ConsentStepType = {
-  consent?: string;
-};
-
-type PersonalInfoStepType = {
-  name?: string;
-  email?: string;
-  phone?: string;
-};
-
-type PositionStepType = {
-  position?: string;
-};
+import type {
+  ConsentStepType,
+  PersonalInfoStepType,
+  PositionStepType,
+} from "@/types/apply";
 
 type FunnelState = {
   consent: ConsentStepType;
