@@ -22,9 +22,8 @@ const Button: React.FC<ButtonProps> = ({
 
   return (
     <button
-      aria-role="button"
       className={cn(
-        "px-4 py-2 rounded text-base transition-all duration-200",
+        "px-4 py-2 text-base rounded transition-all duration-200",
         variantStyles[variant],
         "disabled:cursor-not-allowed",
         className,
