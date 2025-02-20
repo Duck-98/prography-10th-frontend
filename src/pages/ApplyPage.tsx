@@ -58,6 +58,7 @@ const ApplyPage = () => {
       window.location.replace("./apply/complete");
     }, 1000);
   };
+
   const handleNextClick = () => {
     switch (funnel.step) {
       case "consent":
@@ -104,7 +105,7 @@ const ApplyPage = () => {
             <ConsentStep
               consent={context.consent}
               onConsentChange={(value) => {
-                funnel.history.replace("consent", { consent: value });
+                funnel.history.push("consent", { consent: value });
               }}
             />
           )}
@@ -116,7 +117,7 @@ const ApplyPage = () => {
                 phone: context.phone,
               }}
               onSubmit={(data) => {
-                funnel.history.replace("personalInfo", {
+                funnel.history.push("personalInfo", {
                   ...context,
                   ...data,
                 });
@@ -128,7 +129,7 @@ const ApplyPage = () => {
             <PositionStep
               selectedPosition={context.position}
               onSubmit={(position) => {
-                funnel.history.replace("position", {
+                funnel.history.push("position", {
                   ...context,
                   position,
                 });
