@@ -6,6 +6,9 @@ import Button from "@/components/common/Button";
 import { ConsentStep } from "@/components/Steps/ConsentStep";
 import { PersonalInfoStep } from "@/components/Steps/PersonalInfoStep";
 import { PositionStep } from "@/components/Steps/PositionStep";
+import { useState } from "react";
+
+import { FullPageLoading } from "@/components/Loading";
 
 type ConsentStepType = {
   consent?: string;
@@ -28,6 +31,9 @@ type FunnelState = {
 };
 
 const ApplyPage = () => {
+  const [isPersonalInfoValid, setIsPersonalInfoValid] = useState(false);
+  const [loading, setLoading] = useState(false);
+
   const funnel = useFunnel<FunnelState>({
     id: "apply-process",
     initial: {
@@ -50,10 +56,13 @@ const ApplyPage = () => {
   };
 
   const handleSubmit = (data: FunnelState["position"]) => {
-    // TODO: 최종 제출 로직 구현
-    console.log("Final submission:", data);
+    setLoading(true);
+    console.log("제출 데이터>>>>>>>>>", data);
+    setTimeout(() => {
+      setLoading(false);
+      window.location.replace("./apply/complete");
+    }, 1000);
   };
-
   const handleNextClick = () => {
     switch (funnel.step) {
       case "consent":
@@ -67,7 +76,8 @@ const ApplyPage = () => {
         if (
           funnel.context.name &&
           funnel.context.email &&
-          funnel.context.phone
+          funnel.context.phone &&
+          isPersonalInfoValid
         ) {
           funnel.history.push("position", funnel.context);
         }
@@ -80,10 +90,10 @@ const ApplyPage = () => {
     }
   };
 
-  console.log(funnel.context, "context");
   return (
-    <PageLayout>
-      <ComponentLayout className="mb-6">
+    <PageLayout className="gap-6">
+      {loading && <FullPageLoading />}
+      <ComponentLayout className="">
         <div className="flex justify-center">
           <div className="text-3xl font-bold">Prography 10기 지원서</div>
         </div>
@@ -116,14 +126,18 @@ const ApplyPage = () => {
                   ...data,
                 });
               }}
-              onBack={() => funnel.history.back()}
+              onValidityChange={setIsPersonalInfoValid}
             />
           )}
           position={({ context }) => (
             <PositionStep
-              initialPosition={context.position}
-              onSubmit={(position) => handleSubmit({ ...context, position })}
-              onBack={() => funnel.history.back()}
+              selectedPosition={context.position}
+              onSubmit={(position) => {
+                funnel.history.replace("position", {
+                  ...context,
+                  position,
+                });
+              }}
             />
           )}
         />
@@ -144,11 +158,9 @@ const ApplyPage = () => {
             width="80px"
             onClick={handleNextClick}
             disabled={
-              (funnel.step === "consent" && !funnel.context.consent) ||
-              (funnel.step === "personalInfo" &&
-                (!funnel.context.name ||
-                  !funnel.context.email ||
-                  !funnel.context.phone)) ||
+              (funnel.step === "consent" &&
+                funnel.context.consent !== "true") ||
+              (funnel.step === "personalInfo" && !isPersonalInfoValid) ||
               (funnel.step === "position" && !funnel.context.position)
             }
           >
