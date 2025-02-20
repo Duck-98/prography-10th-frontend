@@ -95,7 +95,7 @@ const ApplyPage = () => {
       {loading && <FullPageLoading />}
       <ComponentLayout className="">
         <div className="flex justify-center">
-          <div className="text-3xl font-bold">Prography 10기 지원서</div>
+          <div className="text-2xl font-bold">Prography 10기 지원서</div>
         </div>
       </ComponentLayout>
 

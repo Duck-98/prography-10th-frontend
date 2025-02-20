@@ -15,7 +15,7 @@ const ComponentLayout = ({
 }: ComponentLayoutProps) => {
   return (
     <div
-      className={`bg-white rounded-lg shadow-lg w-full ${maxWidth} p-6 md:p-8 ${className}`}
+      className={`p-4 w-full bg-white rounded-lg shadow-lg ${maxWidth} md:p-8 ${className}`}
     >
       {children}
     </div>
