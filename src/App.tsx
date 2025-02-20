@@ -4,6 +4,7 @@ import { Spinner } from "./components/Loading";
 
 const RecruitmentPage = lazy(() => import("./pages/RecruitmentPage"));
 const ApplyPage = lazy(() => import("./pages/ApplyPage"));
+const ApplyCompletePage = lazy(() => import("./pages/ApplyCompletePage")); // 이렇게 변경
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Routes>
           <Route path="/" element={<RecruitmentPage />} />
           <Route path="/apply" element={<ApplyPage />} />
+          <Route path="/apply/complete" element={<ApplyCompletePage />} />
         </Routes>
       </Suspense>
     </BrowserRouter>
